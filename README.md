@@ -23,7 +23,7 @@ See our team profile [here](https://drivendata.co/blog/federated-learning-pets-p
 
 ## Contact
 
-For any questions, feel free to contact Ken Liu <kenziyuliu@gmail.com>.
+For any questions, feel free to contact Ken Liu <<kenziyuliu@gmail.com>>.
 
 ## Citation
 
