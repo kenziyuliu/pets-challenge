@@ -17,9 +17,9 @@ See also [our NeurIPS'22 paper](https://arxiv.org/abs/2206.07902) and [code](htt
 
 The dependencies are specified in [`runtime/environment-cpu.yml`](runtime/environment-cpu.yml) and [`runtime/environment-gpu.yml`](runtime/environment-gpu.yml) . Note that these files contain the dependencies sufficient for our local testing, and the official runtime during the challenge had other dependencies (e.g. see official CPU dependencies [here](https://github.com/drivendataorg/pets-prize-challenge-runtime/blob/main/runtime/environment-cpu.yml)).
 
-## Team
+## Team & affiliation
 
-See our team profile [here](https://drivendata.co/blog/federated-learning-pets-prize-winners-phases-2-3#puffle).
+See our team profile [here](https://drivendata.co/blog/federated-learning-pets-prize-winners-phases-2-3#puffle). We are a group of students and professors at Carnegie Mellon University studying federated learning and privacy-preserving machine learning.
 
 ## Contact
 
