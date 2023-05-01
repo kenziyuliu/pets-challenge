@@ -330,7 +330,7 @@ if __name__ == '__main__':
   parser.add_argument('-D', '--max_node_deg', type=int, default=20)
   parser.add_argument('-b', '--batch_size', type=int, default=512)
   parser.add_argument('-T', '--epochs', type=float, default=1)
-  parser.add_argument('-nm', '--noise_mult', type=float, default=1.0)
+  parser.add_argument('-nm', '--noise_mult', type=float, default=2.0)
   # parser.add_argument('--delta', type=float, default=1 / 2_600_000)
   args = parser.parse_args()
   args.delta = 1 / args.population_size

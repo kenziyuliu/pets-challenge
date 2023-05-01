@@ -124,8 +124,8 @@ def sample_neighborhood_with_edgefeats(graph: gt.Graph, num_1hop: int, ep_lid: g
   sampled_neighborhood_list = []
   edgefeats_list = []
 
-  # NOTE: Sequentially process the nodes!! This may be unavoidable since we are
-  # sampling the neighbors.
+  # NOTE: Sequentially process the nodes for now!! If compute resources permit
+  # one can also parallelize this over read-only graphs.
   indices = np.arange(graph.num_vertices())
   for idx in tqdm(indices, mininterval=60, desc='(every 1min)'):
     nabes_idx_1hop = graph.get_all_neighbors(idx)
@@ -141,14 +141,18 @@ def sample_neighborhood_with_edgefeats(graph: gt.Graph, num_1hop: int, ep_lid: g
     num_1hop_draw = min(num_1hop, num_nabes)
     rand_nabes = rng.choice(num_nabes, num_1hop_draw, replace=False)
 
-    # Take random 1-hop neighbors, fill with placeholders
+    # Take random 1-hop neighbors, fill with placeholders.
+    # Note that this is not the same as actually pruning the graph to, say, bound
+    # the maximum node degree, but the difference likely isn't significant in
+    # practice since our solution deploys noisy training as an empirical defense
+    # instead of a theoretically strong privacy guarantee specifically for the challenge.
     missed = num_1hop - num_1hop_draw
     nabes_idx_1hop = nabes_idx_1hop[rand_nabes]
     sampled_idx_1hop = np.pad(nabes_idx_1hop, (0, missed),
                               constant_values=placeholder)  # (num_1hop,)
     sampled_neighborhood_list.append(sampled_idx_1hop)
 
-    # Take corresponding edges
+    # Take corresponding edges and record edge (contact) features
     hash_edges_1hop = [hash(graph.edge(idx, nabe)) for nabe in nabes_idx_1hop]  # NOTE: bottleneck
     lid_1hop = ep_lid.a[hash_edges_1hop]
     start_1hop = ep_start.a[hash_edges_1hop]

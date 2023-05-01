@@ -153,7 +153,7 @@ def train_model(model,
     if seed is None:  # randomly choose a seed if not provided
       rng = np.random.default_rng()
       seed = rng.integers(low=0, high=2**32 - 1)
-    logger.info(f'************* Using DPSGD with seed {seed} *************')
+    logger.info(f'************* Using DP-SGD with seed {seed} *************')
     optimizer = optax.dpsgd(learning_rate=lr,
                             l2_norm_clip=l2_clip,
                             noise_multiplier=noise_mult,

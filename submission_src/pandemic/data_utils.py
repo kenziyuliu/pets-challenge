@@ -268,8 +268,6 @@ def create_graph_features(
   logger.info(f'[{client_id=}] Preprocessing start/duration ...')
   # idx2edgefeats is currently (n_nodes, n_1hop, 5).
   # This normalizes the start_time and duration
-  # f_start = idx2edgefeats[:, :, [1]] / 86400.0
-  # f_duration = idx2edgefeats[:, :, [2]] / 86400.0
   f_start_duration = idx2edgefeats[:, :, [1, 2]] / 86400.0
 
   # Convert act1 and act2 to one-hot for 6 types of activities
