@@ -9,7 +9,7 @@ See [`code_documentation.md`](code_documentation.md) which describes the code st
 
 ## Solution documentation
 
-The full solution documentation is provided [here](https://hackmd.io/@kenziyuliu/pets-challenge). Please note that this is an evolving document, and we will be making regular updates to this blog post to provide more discussions on privacy implementation, additional analyses, and open challenges. Additionally, keep an eye out for a potential updated version of this post on the [ML@CMU blog](https://blog.ml.cmu.edu/).
+The full solution documentation is provided [here](https://hackmd.io/@kzliu/pets-challenge). Please note that this is an evolving document, and we will be making regular updates to this blog post to provide more discussions on privacy implementation, additional analyses, and open challenges. Additionally, keep an eye out for a potential updated version of this post on the [ML@CMU blog](https://blog.ml.cmu.edu/).
 
 See also [our NeurIPS'22 paper](https://arxiv.org/abs/2206.07902) and [code](https://github.com/kenziyuliu/private-cross-silo-fl) based on which we developed our entry to the challenge.
 
